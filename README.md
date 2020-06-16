@@ -3,4 +3,4 @@
 Project realized using RoboSim software.
  With this project it was possible to create a path to the operative tip of a 3r manipulator.
  In this repository there is the presentation video and its code
- {{< img src="/robot.mp4" alt="video" video="true">}}
+![](robot.mp4)
