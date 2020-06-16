@@ -1,6 +1,6 @@
 # 3r-manipolator-s-drawing
 
-Project realized using RoboSim software.
- With this project it was possible to create a path to the operative tip of a 3r manipulator.
- In this repository there is the presentation video and its code
- ![](robot.gif)
+Project realized with RoboSim software.
+ We have programmed a 3r manipulator to make the movement of the tip create a 3d-image,
+  in this case a stylized pickup truck.
+ ![final result](robot.gif)
