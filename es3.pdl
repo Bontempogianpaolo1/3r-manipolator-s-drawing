@@ -1,0 +1,264 @@
+PROGRAM es3
+VAR UFRAMEN4, UFRAMEN5 : POSITION
+  FRbs, FRbc1, FRb2, UFRAMEN2, UFRAMEN3 : POSITION
+  TMP, UFRAME2, UFRAME3, UFRAME4, UFRAME5, UFRAME6, TMP2, TMP3, FRbc : POSITION
+  S10, Fbd, Fad, Fas, Fbs : POSITION
+  S20, S30, H30, H40, H50 : POSITION
+  H4, H5, S1, S2, S3 : POSITION
+  F1, C1, H1, H2, H3 : POSITION
+  A, B, C, D, E, F, G, H, I, L, M : POSITION
+BEGIN
+  $TOOL := POS(0, 0, 0, 0, 180, 0)
+  $UFRAME := POS(0, 1500, 100, 0, 0, 0, ' ')
+  $CNFG_CARE := FALSE
+  
+  -- punti parte sotto
+  A := POS(200 * 2, -200, 0, 0, 0, 0, '')
+  B := POS(100 * 2, -200, 0, 0, 0, 0, '')
+  C := POS(50 * 2, -200, 100 * 2, 0, 0, 0, '')
+  C1 := POS(50 * 2, -200, -25 * 2, 0, 0, 0, '')
+  D := POS(0, -200, 0, 0, 0, 0, '')
+  E := POS(-200 * 2, -200, 0, 0, 0, 0, '')
+  F := POS(-250 * 2, -200, 100 * 2, 0, 0, 0, '')
+  F1 := POS(-250 * 2, -200, -25 * 2, 0, 0, 0, '')
+  G := POS(-300 * 2, -200, 0, 0, 0, 0, '')
+  --finestrino
+  Fbd := POS(-120 * 2, -200, 187 * 2, 0, 0, 0, '')
+  Fad := POS(-120 * 2, -200, 280 * 2, 0, 0, 0, '')
+  Fas := POS(-200 * 2, -200, 280 * 2, 0, 0, 0, '')
+  Fbs := POS(-375 * 2, -200, 187 * 2, 0, 0, 0, '')
+  TMP := POS(-120 * 2, -200, 300 * 2, 0, 0, 0, '')
+  TMP3 := POS(-200 * 2, -421, 300 * 2, 0, 0, 0, '')
+  UFRAME2 := POS(200 * 2, 1079, 587, 180, 180, 0, '')
+  UFRAME3 := POS(200 * 2, 1079, 587, 180, 0, 0, '')
+  UFRAME4 := POS(200 * 2, 1079, 587, 0, 0, 0, '')
+  UFRAME5 := POS(200 * 2, 1079, 587, 0, 180, 0, '')
+  
+  UFRAMEN2 := POS(-600, 1079, 600, 180, 90 + 26.565001, 180, '')
+  UFRAMEN3 := POS(-600, 1079, 600, 0, 63.435001, 0, '')
+  UFRAMEN4 := POS(-600, 1079, 600, 0, 63.435001, 180, '')
+  UFRAMEN5 := POS(-600, 1079, 600, 180, 90 + 26.565001, 0, '')
+  --punti parte sopra
+  H1 := POS(200 * 2, -200, 300 * 2, 0, 0, 0, '')
+  H2 := POS(-200 * 2, -200, 300 * 2, 0, 0, 0, '')
+  H3 := POS(-400 * 2, -200, 200 * 2, 0, 0, 0, '')
+  --parte alta curva
+  H4 := POS(-500 * 2, -222, 163 * 2, 0, 0, 0, '')
+  H5 := POS(-580 * 2, -320, 140 * 2, 0, 0, 0, '')
+  --parte curva inf
+  S1 := POS(-580 * 2, -320, 0, 0, 0, 0, '')
+  S2 := POS(-500 * 2, -222, 0, 0, 0, 0, '')
+  S3 := POS(-400 * 2, -200, 0, 0, 0, 0, '')
+  --altro lato curva bassa
+  S30 := POS(-400 * 2, -320 - 98 - 22, 0, 0, 0, 0, '')
+  S20 := POS(-500 * 2, -320 - 98, 0, 0, 0, 0, '')
+  S10 := POS(-580 * 2, -320, 0, 0, 0, 0, '')
+  --altro lato alta curva
+  H30 := POS(-400 * 2, -320 - 98 - 22, 200 * 2, 0, 0, 0, '')
+  H40 := POS(-500 * 2, -320 - 98, 163 * 2, 0, 0, 0, '')
+  H50 := POS(-580 * 2, -320, 140 * 2, 0, 0, 0, '')
+  
+  --fin dietro
+  FRbc := POS(0, 0, 90, 0, 0, 0, '')
+  FRbs := POS(0, 177, 90, 0, 0, 0, '')
+  FRbc1 := POS(0, 194.82001, 82.139999, 0, 0, 0, '')
+  FRb2 := POS(0, 201, 66, 0, 0, 0, '')
+  TMP2 := POS(0, 0, -110, 0, 0, 0, '')
+  
+  --ruote
+  MOVE TO A
+  MOVE LINEAR TO B
+  MOVE CIRCULAR TO D VIA C
+  MOVE LINEAR TO E
+  MOVE CIRCULAR TO G VIA F
+  MOVE CIRCULAR TO E VIA F1
+  MOVE LINEAR TO D
+  MOVE CIRCULAR TO B VIA C1
+  $UFRAME := POS(0, 1400, 100, 0, 0, 0, '')
+  MOVE LINEAR TO B
+  MOVE CIRCULAR TO D VIA C
+  $UFRAME := POS(0, 1500, 100, 0, 0, 0, ' ')
+  MOVE LINEAR TO D
+  MOVE LINEAR TO E
+  $UFRAME := POS(0, 1400, 100, 0, 0, 0, '')
+  MOVE LINEAR TO E
+  MOVE CIRCULAR TO G VIA F
+  $UFRAME := POS(0, 1500, 100, 0, 0, 0, ' ')
+  MOVE LINEAR TO G
+  $UFRAME := POS(0, 1400, 100, 0, 0, 0, '')
+  MOVE LINEAR TO G
+  MOVE CIRCULAR TO E VIA F1
+  $UFRAME := POS(0, 1500, 100, 0, 0, 0, ' ')
+  MOVE LINEAR TO E
+  MOVE LINEAR TO D
+  $UFRAME := POS(0, 1400, 100, 0, 0, 0, '')
+  MOVE LINEAR TO D
+  MOVE CIRCULAR TO B VIA C1
+  $UFRAME := POS(0, 1500, 100, 0, 0, 0, ' ')
+  MOVE LINEAR TO B
+  MOVE LINEAR TO A
+  
+  --parte sopra
+  MOVE LINEAR TO H1
+  MOVE LINEAR TO H2
+  MOVE LINEAR TO H3
+  MOVE CIRCULAR TO H5 VIA H4
+  $UFRAME := POS(0, 1300, 100, 0, 0, 0, ' ')
+  MOVE LINEAR TO H5
+  $UFRAME := POS(0, 1500, 100, 0, 0, 0, ' ')
+  MOVE LINEAR TO H5
+  --parte curva inferiore
+  MOVE LINEAR TO S1
+  MOVE CIRCULAR TO S3 VIA S2
+  MOVE LINEAR TO G
+  MOVE LINEAR TO S3
+  MOVE CIRCULAR TO S1 VIA S2
+  
+  --altro lato
+  $UFRAME := POS(0, 1300, 100, 0, 0, 0, ' ')
+  MOVE LINEAR TO S10
+  MOVE CIRCULAR TO S30 VIA S20
+  $UFRAME := POS(0, 1058, 100, 0, 0, 0, ' ')
+  MOVE LINEAR TO G
+  $UFRAME := POS(0, 1158, 100, 0, 0, 0, '')
+  MOVE LINEAR TO G
+  $UFRAME := POS(0, 1058, 100, 0, 0, 0, ' ')
+  MOVE LINEAR TO G
+  $UFRAME := POS(0, 1300, 100, 0, 0, 0, ' ')
+  MOVE LINEAR TO S30
+  MOVE CIRCULAR TO S10 VIA S20
+  
+  MOVE LINEAR TO H50
+  MOVE CIRCULAR TO H30 VIA H40
+  $UFRAME := POS(0, 1500, 100, 0, 0, 0, ' ')
+  MOVE LINEAR TO H3
+  $UFRAME := POS(0, 1058, 100, 0, 0, 0, ' ')
+  MOVE LINEAR TO H3
+  
+  
+  MOVE LINEAR TO H2
+  $UFRAME := POS(0, 1500, 100, 0, 0, 0, ' ')
+  MOVE LINEAR TO H2
+  $UFRAME := POS(0, 1058, 100, 0, 0, 0, ' ')
+  MOVE LINEAR TO H2
+  MOVE LINEAR TO H1
+  $UFRAME := POS(0, 1500, 100, 0, 0, 0, ' ')
+  MOVE LINEAR TO H1
+  $UFRAME := POS(0, 1058, 100, 0, 0, 0, ' ')
+  MOVE LINEAR TO H1
+  MOVE LINEAR TO A
+  $UFRAME := POS(0, 1500, 100, 0, 0, 0, ' ')
+  MOVE LINEAR TO A
+  $UFRAME := POS(0, 1058, 100, 0, 0, 0, ' ')
+  MOVE LINEAR TO A
+  MOVE LINEAR TO B
+  MOVE CIRCULAR TO D VIA C
+  MOVE LINEAR TO E
+  MOVE CIRCULAR TO G VIA F
+  MOVE CIRCULAR TO E VIA F1
+  MOVE LINEAR TO D
+  MOVE CIRCULAR TO B VIA C1
+  $UFRAME := POS(0, 1158, 100, 0, 0, 0, '')
+  MOVE LINEAR TO B
+  MOVE CIRCULAR TO D VIA C
+  $UFRAME := POS(0, 1058, 100, 0, 0, 0, ' ')
+  MOVE LINEAR TO D
+  MOVE LINEAR TO E
+  $UFRAME := POS(0, 1158, 100, 0, 0, 0, '')
+  MOVE LINEAR TO E
+  MOVE CIRCULAR TO G VIA F
+  MOVE CIRCULAR TO E VIA F1
+  $UFRAME := POS(0, 1058, 100, 0, 0, 0, ' ')
+  MOVE LINEAR TO E
+  MOVE LINEAR TO D
+  $UFRAME := POS(0, 1158, 100, 0, 0, 0, '')
+  MOVE LINEAR TO D
+  MOVE CIRCULAR TO B VIA C1
+  $UFRAME := POS(0, 1058, 100, 0, 0, 0, ' ')
+  MOVE LINEAR TO B
+  MOVE LINEAR TO A
+  
+  --finestrino
+  MOVE LINEAR TO H1
+  MOVE LINEAR TO TMP
+  MOVE LINEAR TO Fad
+  MOVE LINEAR TO Fbd
+  MOVE LINEAR TO Fbs
+  MOVE LINEAR TO Fas
+  MOVE LINEAR TO Fad
+  
+  
+  --finestrino retro
+  MOVE LINEAR TO TMP
+  MOVE LINEAR TO H1
+  
+  $UFRAME := UFRAME2
+  $TOOL := POS(0, 0, 0, 0, 0, 0)
+  MOVE LINEAR TO TMP2
+  MOVE LINEAR TO FRbc
+  MOVE LINEAR TO FRbs
+  MOVE CIRCULAR TO FRb2 VIA FRbc1
+  
+  $UFRAME := UFRAME3
+  $TOOL := POS(0, 0, 0, 0, 180, 0)
+  MOVE LINEAR TO FRb2
+  MOVE CIRCULAR TO FRbs VIA FRbc1
+  
+  $UFRAME := UFRAME4
+  MOVE LINEAR TO FRbs
+  MOVE CIRCULAR TO FRb2 VIA FRbc1
+  
+  $UFRAME := UFRAME5
+  $TOOL := POS(0, 0, 0, 0, 0, 0)
+  MOVE LINEAR TO FRb2
+  MOVE CIRCULAR TO FRbs VIA FRbc1
+  
+  $UFRAME := UFRAME2
+  MOVE LINEAR TO FRbc
+  MOVE LINEAR TO TMP2
+  
+  --finestrino laterale
+  $UFRAME := POS(0, 1500, 100, 0, 0, 0, '')
+  $TOOL := POS(0, 0, 0, 0, 180, 0)
+  MOVE LINEAR TO H1
+  MOVE LINEAR TO TMP
+  MOVE LINEAR TO Fad
+  MOVE LINEAR TO Fbd
+  MOVE LINEAR TO Fbs
+  MOVE LINEAR TO Fas
+  MOVE LINEAR TO Fad
+  MOVE LINEAR TO TMP
+  MOVE LINEAR TO H2
+  
+  --finestrino davanti
+  FRbc := POS(0, 0, 200, 0, 0, 0, '')
+  FRbs := POS(0, 177, 200, 0, 0, 0, '')
+  FRbc1 := POS(0, 194.82001, 82.139999 + 110, 0, 0, 0, '')
+  FRb2 := POS(0, 201, 66 + 110, 0, 0, 0, '')
+  
+  
+  MOVE LINEAR TO TMP3
+  $UFRAME := UFRAMEN4
+  MOVE LINEAR TO FRbc
+  MOVE LINEAR TO FRbs
+  MOVE CIRCULAR TO FRb2 VIA FRbc1
+  
+  $UFRAME := UFRAMEN5
+  $TOOL := POS(0, 0, 0, 0, 0, 0)
+  MOVE LINEAR TO FRb2
+  MOVE CIRCULAR TO FRbs VIA FRbc1
+  
+  $UFRAME := UFRAMEN2
+  $TOOL := POS(0, 0, 0, 180, 0, 0)
+  
+  
+  MOVE LINEAR TO FRbs
+  MOVE CIRCULAR TO FRb2 VIA FRbc1
+  
+  $UFRAME := UFRAMEN3
+  $TOOL := POS(0, 0, 0, 0, 180, 0)
+  MOVE LINEAR TO FRb2
+  MOVE CIRCULAR TO FRbs VIA FRbc1
+  $UFRAME := UFRAMEN4
+  MOVE TO FRbc
+END es3
